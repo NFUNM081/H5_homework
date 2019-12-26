@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+<meta charset="UTF-8">
+     <title>第二题</title>
+     <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+
+<meta charset="utf-8">
+<title>jquery图片轮播, banner 原创</title>
+<!-- jQuery Script -->
+<style>
+  *{padding: 0; margin: 0}
+  .slider {
+    position: relative;
+    height: 400px;
+    min-width: 1004px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .slider .slider-pointer {
+    position: absolute;
+    bottom: 20px;
+    color: #fff;
+    list-style: none;
+    padding: 0;
+    z-index: 999;
+  }
+  .slider .slider-pointer li {
+    display: inline-block;
+    margin: 0 15px;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    opacity: 0.85;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+    transition: all 320ms ease;
+  }
+  .slider .slider-pointer li:hover {
+    background-color: #e30006;
+  }
+  .slider .slider-pointer li.active {
+    background-color: #b00005;
+  }
+  .slider .slider-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .slider .slider-inner .item {
+    width: 100%;
+    height: 100%;
+    float: left;
+  }
+  .slider .slider-inner .img {
+    background-position: center top !important;
+    width: 100%;
+    height: 100%;
+  }
+  .slider .slider-control {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    z-index: 999;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 30px;
+    background-color: #ffffff;
+    opacity: 0.5;
+    cursor: pointer;
+    top: 40%;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+    transition: all 320ms ease;
+  }
+  .slider .slider-control:hover {
+    opacity: 0.65;
+    background-color: #b00005;
+  }
+  .slider .slider-control:active {
+    opacity: 0.85;
+  }
+  .slider .slider-control.prev {
+    display: none;
+    left: 20px;
+  }
+  .slider .slider-control.next {
+    display: none;
+    right: 20px;
+  }
+  .slider:hover .slider-control.prev {
+    display: block;
+    left: 20px;
+  }
+  .slider:hover .slider-control.next {
+    display: block;
+    right: 20px;
+  }
+
+</style>
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>侧边导航</title>
+   <link rel="stylesheet" type="text/css" href="css/public.css">
+
+</head>
+<body>
+
+        <div class="jq22-header">
+            <div class="jq22-comm-box clearfix">
+                <div class="jq22-nav-logo">
+                    <a href="#">
+                        <img src="imgs/icon-logo.png" alt="" class="jq22-nav-logo1">
+                    </a>
+                    <a href="#">
+                        <img src="imgs/icon-gf.gif" alt="" class="jq22-nav-logo2">
+                    </a>
+                </div>
+                <div class="jq22-nav-nav">
+                    <dl class="clearfix">
+                        <dd class="on">
+                            <h3 class="jq22-clear">
+                                <a href="#">首页</a>
+                            </h3>
+                        </dd>
+                        <dd>
+                            <h3>
+                                <a href="#">财富管理</a>
+                            </h3>
+                            <div class="jq22-hot"></div>
+                            <ul class="jq22-nav-list">
+                                <li>
+                                    <a href="#">MM计划</a>
+                                </li>
+                                <li>
+                                    <a href="#">M+计划</a>
+                                </li>
+                                <li>
+                                    <a href="#">XX包</a>
+                                </li>
+                                <li>
+                                    <a href="#">有道财富</a>
+                                </li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            <h3>
+                                <a href="#">个人信贷</a>
+                            </h3>
+                            <ul class="jq22-nav-list">
+                                <li>
+                                    <a href="#">开借</a>
+                                </li>
+                                <li>
+                                    <a href="#">房产贷款</a>
+                                </li>
+                                <li>
+                                    <a href="#">高管股权贷</a>
+                                </li>
+                                <li>
+                                    <a href="#">高管信用贷</a>
+                                </li>
+                                <li>
+                                    <a href="#">股票质押贷</a>
+                                </li>
+                                <li>
+                                    <a href="#">商通贷</a>
+                                </li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            <h3>
+                                <a href="#">企业金融</a>
+                            </h3>
+                            <ul class="jq22-nav-list">
+                                <li>
+                                    <a href="#">企业信贷</a>
+                                </li>
+                                <li>
+                                    <a href="#">过桥垫资</a>
+                                </li>
+                                <li>
+                                    <a href="#">股权投资</a>
+                                </li>
+                                <li>
+                                    <a href="#">股权质押</a>
+                                </li>
+                                <li>
+                                    <a href="#">财务顾问</a>
+                                </li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            <h3>
+                                <a href="#">金融租赁</a>
+                            </h3>
+                        </dd>
+                        <dd>
+                            <h3>
+                                <a href="#">信息披露</a>
+                            </h3>
+                        </dd>
+                        <dd>
+                            <h3>
+                                <a href="#">湾主码头</a>
+                            </h3>
+                            <ul class="jq22-nav-list">
+                                <li>
+                                    <a href="#">金融论坛</a>
+                                </li>
+                                <li>
+                                    <a href="#">积分商城</a>
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="jq22-nav-right">
+                    <a href="#">个人中心</a>
+                </div>
+            </div>
+        </div>
+        <div class="jq22-banner-box">
+            <div class="jq22-banner-slide">
+                <div class="hd jq22-banner-circle">
+                    <ul>
+                        <li class="on"></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="bd jq22-banner-body">
+                    <ul>
+                        <li>
+                            <a href="#" class="jq22-banner-body-bg01"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="jq22-banner-body-bg02"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="jq22-banner-body-bg03"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="jq22-background">
+            <p>*预期收益并非平台承诺收益，市场有风险，投资需谨慎</p>
+        </div>
+        <div class="jq22-list-item">
+            <div class="jq22-list-wrap">
+                <ul>
+                    <li>
+                        <div class="jq22-list-wrap-box">
+                            <h2>
+                                <img src="imgs/icon1.png" alt="">财富管理
+                            </h2>
+                            <p>
+                                <a href="#">MM计划</a>
+                                <a href="#">财富岛</a>
+                            </p>
+                            <p>
+                                <a href="#">M+计划</a>
+                                <a href="#">XX包</a>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="jq22-list-wrap-box">
+                            <h2>
+                                <img src="imgs/icon2.png" alt="">贷款
+                            </h2>
+                            <p>
+                                <a href="#">个人信贷</a>
+                                <a href="#">股票质押</a>
+                            </p>
+                            <p>
+                                <a href="#">高管信用贷</a>
+                                <a href="#">房产贷款</a>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="jq22-list-wrap-box">
+                            <h2>
+                                <img src="imgs/icon3.png" alt="">融资租赁
+                            </h2>
+                            <p>
+                                <a href="#">自助贩卖机</a>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="jq22-list-wrap-box">
+                            <h2>
+                                <img src="imgs/icon4.png" alt="">湾主码头
+                            </h2>
+                            <p>
+                                <a href="#">积分商城</a>
+                                <a href="#">JR兑换</a>
+                            </p>
+                            <p>
+                                <a href="#">JR抽奖</a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+            jQuery(".jq22-banner-slide").slide({
+                mainCell: ".bd ul",
+                effect: "fold",
+                autoPlay: true,
+                trigger: "click",
+                delayTime: 1000
+            });
+
+            jQuery(".jq22-comm-box").slide({
+                type: "menu",
+                titCell: "dd",
+                targetCell: "ul",
+                delayTime: 0,
+                defaultPlay: false,
+                returnDefault: true
+            });
+        </script>
+
+<div class="slider" id="slider">
+  <div class="slider-inner">
+    <div class="item">
+      <img src="imgs/banner01.png" alt="">
+      
+    </div>
+    <div class="item">
+      <img src="imgs/banner02.png" alt="">
+    </div>
+    <div class="item">
+      <img src="imgs/banner03.png" alt="">
+    </div>
+  </div>
+</div>
+
+<script src="http://www.jq22.com/jquery/1.8.3/jquery.min.js"></script>
+<script>
+/**
+ * Author         : CheneyLiu
+ * Date           : date
+ * isAuto:        true, 自动播放
+ * transTime:     3000, 自动播放间隔
+ * animateSpeed:  1000,  动画速度
+ * sliderMode:    'slide', 类型//'slide | fade',
+ * pointerControl: true, 指示器开关
+ * pointerEvent:  'click', 指示器类型//'hover' | 'click',
+ * arrowControl:  true, 左右控制
+ */
+;(function($) {
+$.fn.Slider = function(options) {
+  "use strict";
+
+  var settings = $.extend({
+    isAuto: true,
+    transTime: 4000,
+    animateSpeed: 1000,  
+    sliderMode: 'slide', //'slide | fade',
+    pointerControl: true,
+    pointerEvent: 'click',//'hover' | 'click',
+    arrowControl: true,
+  }, options);
+  var interval;
+  var isAnimating     = false;
+  var $slider         = $(this);
+  var $sliderWrap     = $slider.find('.slider-inner');
+  var sliderCount     = $sliderWrap.find('> .item').length;
+  var sliderWidth     = $slider.width();
+  var currentIndex    = 0;
+
+  var sliderFun = {
+    controlInit: function() {
+      // pointerControl
+      if (settings.pointerControl) {
+        
+        var html = '';
+        html += '<ol class="slider-pointer">';
+        for (var i = 0; i < sliderCount; i++) {
+          if (i == 0) {
+            html += '<li class="active"></li>'
+          }else{
+            html += '<li></li>'
+          }
+        }
+        html += '</ol>'
+        $slider.append(html);
+          // 指示器居中
+        var $pointer = $slider.find('.slider-pointer');
+        $pointer.css({
+          left: '50%',
+          marginLeft: - $pointer.width()/2
+        });
+      }
+      // pointerControl
+      if (settings.arrowControl) {
+        var html = "";
+        html += '<span class="slider-control prev">&lt;</span>';
+        html += '<span class="slider-control next">&gt;</span>'
+        $slider.append(html);
+      }
+      $slider.on('click', '.slider-control.prev', function(event) {
+        sliderFun.toggleSlide('prev');
+      });
+      $slider.on('click', '.slider-control.next', function(event) {
+        sliderFun.toggleSlide('next');
+      });
+    },
+    // slider
+    sliderInit: function() {
+      sliderFun.controlInit();
+      // 模式选择
+      if (settings.sliderMode == 'slide') {
+        // slide 模式
+        $sliderWrap.width(sliderWidth * sliderCount);
+        $sliderWrap.children().width(sliderWidth);
+      }else{
+        // mode 模式
+        $sliderWrap.children().css({
+          'position': 'absolute',
+          'left': 0,
+          'top': 0
+        });
+        $sliderWrap.children().first().siblings().hide();
+      }
+      // 控制事件
+      if (settings.pointerEvent == 'hover') {
+        $slider.find('.slider-pointer > li').mouseenter(function(event) {
+          sliderFun.sliderPlay($(this).index());
+        });
+      }else{
+        $slider.find('.slider-pointer > li').click(function(event) {
+          if (currentIndex != $(this).index()) {
+				sliderFun.sliderPlay($(this).index())
+			}
+        });
+      }
+      // 自动播放
+      sliderFun.autoPlay();
+    },
+    // slidePlay
+    sliderPlay: function(index) {
+      sliderFun.stop();
+      isAnimating = true;
+      $sliderWrap.children().first().stop(true, true);
+      $sliderWrap.children().stop(true, true);
+      $slider.find('.slider-pointer').children()
+        .eq(index).addClass('active')
+        .siblings().removeClass('active');
+      if (settings.sliderMode == "slide") {
+        // slide
+        if (index > currentIndex) {
+          $sliderWrap.animate({
+        left: '-=' + Math.abs(index - currentIndex) * sliderWidth + 'px'
+    }, settings.animateSpeed, function() {
+        sliderFun.stop();
+        isAnimating = false;
+        sliderFun.autoPlay()
+    });
+        } else if (index < currentIndex) {
+          $sliderWrap.animate({
+            left: '+=' + Math.abs(index - currentIndex) * sliderWidth + 'px'
+          }, settings.animateSpeed, function() {
+            isAnimating = false;
+            sliderFun.autoPlay();
+          });
+        } else {
+          return;
+        }
+      }else{
+        // fade
+        if ($sliderWrap.children(':visible').index() == index) return;
+        $sliderWrap.children().fadeOut(settings.animateSpeed)
+          .eq(index).fadeIn(settings.animateSpeed, function() {
+            isAnimating = false;
+            sliderFun.autoPlay();
+          });
+      }
+      currentIndex = index;
+    },
+    // toggleSlide
+    toggleSlide: function(arrow) {
+      if (isAnimating) {
+        return;
+      }
+      var index;
+      if (arrow == 'prev') {
+        index = (currentIndex == 0) ? sliderCount - 1 : currentIndex - 1;
+        sliderFun.sliderPlay(index);
+      }else if(arrow =='next'){
+        index = (currentIndex == sliderCount - 1) ? 0 : currentIndex + 1;
+        sliderFun.sliderPlay(index);
+      }
+    },
+    // autoPlay
+    autoPlay: function() {
+      if (settings.isAuto) {
+        interval = setInterval(function () {
+          var index = currentIndex;
+          (currentIndex == sliderCount - 1) ? index = 0: index = currentIndex + 1;
+          sliderFun.sliderPlay(index);
+        }, settings.transTime);
+      }else{
+        return;
+      }
+    },
+    //stop
+    stop: function() {
+      clearInterval(interval);
+    },
+  };
+  sliderFun.sliderInit();
+}
+})(jQuery);
+jQuery(document).ready(function($) {
+  $('#slider').Slider();
+});
+</script>
+
+
+<script src="http://www.jq22.com/js/jq.js"></script>
+
+ <div class="test"></div>
+   <!-- 右侧导航 -->
+   <ul class="right_nav">
+      <li>
+         <div class="iconBox oln_ser"> 
+            <img src='imgs/rnqq.png'>
+            <h4>在线客服</h4>
+         </div>
+         <div class="hideBox">
+            <div class="hb">
+               <h5>在线咨询</h5>
+               <div class="qqtalk">
+                  <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=（你的QQ号码）&site=qq&menu=yes">
+                     <span><img src="imgs/online.png" alt="点击发消息"
+                           title="点击发消息" /></span>
+                     <p>点击发消息</p>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </li>
+      <li>
+         <div class="iconBox phe_num">
+            <img src='imgs/rncall.png'>
+            <h4>联系电话</h4>
+         </div>
+         <div class="hideBox">
+            <div class="hb">
+               <h5>热线电话</h5>
+               <p>18866886688</p>
+            </div>
+         </div>
+      </li>
+      <li>
+         <div class="iconBox">
+            <img src='imgs/rnphone.png'>
+            <h4>手机站点</h4>
+         </div>
+         <div class="hideBox">
+            <div class="hb">
+               <h5>手机扫一扫打开</h5>
+               <img src='imgs/ewm.jpg'>
+            </div>
+         </div>
+      </li>
+      <li>
+         <div class="iconBox to_msg">
+            <img src='imgs/rnmsg.png'>
+            <h4>在线留言</h4>
+         </div>
+      </li>
+      <li>
+         <div class="iconBox top">
+            <img src='imgs/rntop.png'>
+            <h4>回到顶部</h4>
+         </div>
+      </li>
+   </ul>
+   
+   <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+   <script type="text/javascript" src='js/rightAsk.js'></script>
+
+</body>
+</html>

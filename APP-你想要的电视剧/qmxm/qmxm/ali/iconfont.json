@@ -1,0 +1,100 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2041685",
+      "name": "CN_bilibili B",
+      "font_class": "CN_bilibiliB",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "2727684",
+      "name": "登录设置",
+      "font_class": "login-settings",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "3893491",
+      "name": "照片",
+      "font_class": "zhaopian",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "3900986",
+      "name": "影视",
+      "font_class": "yingshi-yuanwenjian",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "5048773",
+      "name": "奇异果",
+      "font_class": "qiyiguo",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "5138637",
+      "name": "电视",
+      "font_class": "dianshi",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "5484486",
+      "name": "天堂岛",
+      "font_class": "tiantangdao",
+      "unicode": "e7b0",
+      "unicode_decimal": 59312
+    },
+    {
+      "icon_id": "7219134",
+      "name": "笑脸",
+      "font_class": "xiaolian",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "7384710",
+      "name": "电视",
+      "font_class": "weibiaoti-",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "7703795",
+      "name": "芒果",
+      "font_class": "mangguo",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "9252046",
+      "name": "20-企鹅",
+      "font_class": "-qie",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "9495921",
+      "name": "ppt",
+      "font_class": "ppt",
+      "unicode": "e5c5",
+      "unicode_decimal": 58821
+    },
+    {
+      "icon_id": "10619433",
+      "name": "首页  房子",
+      "font_class": "svg-",
+      "unicode": "e6ea",
+      "unicode_decimal": 59114
+    }
+  ]
+}
